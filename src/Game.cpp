@@ -3,6 +3,16 @@
 #define MAX_SCORE 21
 #define DEALER_MIN_SCORE 17
 
+Game::Game() :
+    playerHand(), dealerHand(), deck(), state(State::NOT_STARTED),
+    busted(false)
+{}
+
+/* Clears the player and dealer hands, shuffles the deck, deals cards,
+ * and sets up the current game state. If the dealer got blackjack,
+ * the state is either set to TIE or LOSE based on whether the player
+ * also got blackjack. Otherwise, the state is set to PLAYING.
+ */
 void Game::start() {
     state = State::PLAYING;
 
@@ -26,6 +36,9 @@ void Game::start() {
     }
 }
 
+/* Deals the player a card. If the player goes over the max
+ * score, sets the state to LOSE and sets the busted flag.
+ */
 void Game::hit() {
     if (isPlaying()) {
         playerHand.addCard(deck.draw());
@@ -37,6 +50,13 @@ void Game::hit() {
     }
 }
 
+/* Ends the game by drawing the dealer up to his minimum score and
+ * then calculating the game's final state. If the dealer busts or
+ * the player has a greater score, the state is set to WIN. If the
+ * player and dealer have the same score, the state is set to TIE.
+ * Otherwise, the dealer has a greater score, so the state is set
+ * to LOSE.
+ */
 void Game::stay() {
     if (isPlaying()) {
         while (getDealerScore() < DEALER_MIN_SCORE) {

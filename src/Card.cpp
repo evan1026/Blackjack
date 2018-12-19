@@ -1,5 +1,6 @@
 #include "Card.h"
 
+/// Map from Suits to their string representations
 const std::map<Card::Suit, std::string>
 Card::suitNames = {
     {Suit::Heart, "Hearts"},
@@ -8,6 +9,7 @@ Card::suitNames = {
     {Suit::Club, "Clubs"}
 };
 
+/// Map from Values to their string representations
 const std::map<Card::Value, std::string>
 Card::valueNames = {
     {Value::Ace, "Ace"},
@@ -25,6 +27,7 @@ Card::valueNames = {
     {Value::King, "King"}
 };
 
+/// List of all Suits
 const std::vector<Card::Suit>
 Card::suits = {
     Suit::Heart,
@@ -33,6 +36,7 @@ Card::suits = {
     Suit::Club
 };
 
+/// List of all values
 const std::vector<Card::Value>
 Card::values = {
     Value::Ace,
