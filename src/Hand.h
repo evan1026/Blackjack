@@ -1,3 +1,7 @@
+/** \file Hand.h
+  * \brief Defines the Hand class
+  */
+
 #pragma once
 
 #include "Card.h"

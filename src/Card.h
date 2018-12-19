@@ -1,3 +1,7 @@
+/** \file Card.h
+  * \brief Defines the Card class
+  */
+
 #pragma once
 
 #include <string>

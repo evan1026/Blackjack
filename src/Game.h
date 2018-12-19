@@ -1,3 +1,7 @@
+/** \file Game.h
+  * \brief Defines the Game class
+  */
+
 #pragma once
 
 #include "Hand.h"
@@ -53,25 +57,23 @@ class Game {
 
         /** \brief   Starts the game
           *
-          * Sets up initial game state. Can be called multiple times to
-          * restart the game. Other game mechanics will do nothing until
-          * the game is started.
+          * Can be called multiple times to restart the game. Other
+          * game mechanics will do nothing until the game is started.
           */
         void start();
 
         /** \brief   Performs a hit (gives the player another card)
           *
-          * Performs a hit (gives the player another card). If the game
-          * wasn't started or it has ended, this function does nothing.
+          * If the game wasn't started or it has ended, this function
+          * does nothing.
           */
         void hit();
 
         /** \brief   Ends the game with whatever cards the user has
           *
-          * Ends the game with whatever cards the user has. This will
-          * cause the dealer to draw until he has reached the minimum
-          * score, after which the game state will be set to represent
-          * whether the user has won or lost.
+          * This will cause the dealer to draw until he has reached the
+          * minimum score, after which the game state will be set to
+          * represent whether the user has won or lost.
           */
         void stay();
 

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.3)
 
 project(BLACKJACK)
 
@@ -15,6 +15,17 @@ add_executable(${EXECUTABLE_NAME}
                ${SOURCE_DIR}/Hand.cpp
                ${SOURCE_DIR}/Deck.cpp
                ${SOURCE_DIR}/Game.cpp)
+
+set(DOXYGEN_GENERATE_HTML YES)
+set(DOXYGEN_GENERATE_MAN YES)
+find_package(Doxygen)
+if (DOXYGEN_FOUND)
+    doxygen_add_docs(
+        doxygen
+        ${SOURCE_DIR}
+        COMMENT "Generate documentation"
+    )
+endif(DOXYGEN_FOUND)
 
 #find_package(PkgConfig REQUIRED)
 #pkg_check_modules(GTKMM gtkmm-3.0)

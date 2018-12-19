@@ -1,3 +1,6 @@
+/** \file Deck.h
+  * \brief Defines the Deck class
+  */
 #pragma once
 
 #include <vector>

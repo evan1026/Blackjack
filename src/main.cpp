@@ -1,3 +1,8 @@
+/** \file main.cpp
+ *
+  * Main file which handles I/O and dispatches inputs to the logic code.
+  */
+
 #include <iostream>
 #include <algorithm>
 #include <ctime>
